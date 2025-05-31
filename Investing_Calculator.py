@@ -39,7 +39,32 @@ def fee_calculation() :
                       f'considered "{fee_category}"!')
             except ValueError :
                 print('Invalid Entry! Please enter an integer value.')
-fee_calculation()
+
+def cost_calculation() :
+    print('Under construction :)')
+
+
+while True :
+    type_of_calculation = ['Fee calculation', 'Cost calculation']
+    print("Type Quit at any point to exit the program.1")
+    print("Choose what type of calculation you would like to perform!")
+    for i, item in enumerate(type_of_calculation, start=1):
+        print(f"{i}. {item}")
+
+    user_choice = input("[1] , [2] : ")
+
+    if user_choice.lower() == 'quit' :
+        print('Exiting the program...')
+        sys.exit()
+    else :
+        try:
+            user_choice = int(user_choice)
+            if user_choice == 1 :
+                fee_calculation()
+            elif user_choice == 2 :
+                cost_calculation()
+        except (ValueError, IndexError):
+            print("Invalid entry! Please enter a valid number from the list.")
 
 
 
